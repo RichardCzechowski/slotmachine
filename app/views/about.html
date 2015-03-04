@@ -1,0 +1,13 @@
+<table class="table table-striped">
+  <tr>
+    <th>Symbol1</th>
+    <th>Symbol2</th>
+    <th>Symbol3</th>
+    <th>Payout</th>
+    <th>Credits</th>
+  </tr>
+  <tr ng-repeat="col in cols track by $index">
+    <td ng-repeat="img in col"><img class="payoutImg" ng-src="{{img}}"></td>
+    <td>{{20 + (40 * (2-$index))}}</td>
+  </tr>
+</table>

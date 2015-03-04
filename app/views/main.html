@@ -1,0 +1,29 @@
+<div class="setHeight">
+  <section class="slotContainer">
+    <img class="slotMachine" src="images/slot_machine/slot_machine.png" alt="Slot machine"><br>
+    <img ng-repeat="img in cols.col0 track by $index" class="slotImage col0" ng-class="position(0, $index)" ng-src="{{img}}" />
+    <img ng-repeat="img in cols.col1 track by $index" class="slotImage col1" ng-class="position(1, $index)"  ng-src="{{img}}" />
+    <img ng-repeat="img in cols.col2 track by $index" class="slotImage col2" ng-class="position(2, $index)"  ng-src="{{img}}" />
+    <input class="credits" id="totalCredits" ng-readonly="true" ng-model="total" />
+    <input class="credits" id="bet" ng-readonly="true" ng-model="bet" />
+    <form>
+      <button type="button" class="options" id="reset" ng-click="reset()"  data-toggle="tooltip" data-placement="bottom" title="Reset Machine">Reset</button>
+      <button type="button" class="options" id="payTable" ng-click="go('/about')"  data-toggle="tooltip" data-placement="bottom" title="Check Payouts" >Pay Table</button>
+      <button type="button" class="options" id="credit" ng-click="total= total + 100"  data-toggle="tooltip" data-placement="bottom" title="Add 100 credits">Credit</button>
+      <button type="button" class="options" id="spin" ng-click="spin()" ng-disabled="spinning || total < 20"  data-toggle="tooltip" data-placement="bottom" title="Spin it!">Spin</button>
+    </form>
+  </section>
+  <div ng-show="showResults" class="panel result" ng-class="{win:!spinning && spun, 'panel-danger': !won, 'panel-success': won}">
+    <div class="panel-heading">
+      <p class="panel-title" ng-show="won">
+        <a href="http://i3.kym-cdn.com/photos/images/facebook/000/048/783/a_winner_is_you20110724-22047-1nd3wif.jpg">A winner is you!</a> You've won a cup of {{beverage}}!
+      </p>
+      <p class="panel-title" ng-show="!won">
+        Sorry, <a href="https://www.youtube.com/watch?v=M5QGkOGZubQ">you get nothing.</a> Guess it's time to go to Starbucks!
+      </p>
+    </div>
+    <div class="panel-body">
+      <img ng-src="{{won ? alert[results[0]] : alert[3]}}">
+    </div>
+  </div>
+</div>

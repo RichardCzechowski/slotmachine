@@ -1,0 +1,257 @@
+@font-face {
+  font-family: 'digital-7';
+  src: url('../fonts/digital-7.ttf');
+  }
+
+
+  .browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+.container {
+  max-width: 730px;
+}
+
+/* Remove the padding we set earlier */
+.header,
+.marketing,
+.footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Space out the masthead */
+.header {
+  margin-bottom: 30px;
+}
+/* Remove the bottom border on the jumbotron for visual effect */
+.jumbotron {
+  border-bottom: 0;
+}
+}
+
+/* slot machine */
+.setHeight{
+  text-align: center;
+  min-height: 600px;
+}
+
+.slotContainer{
+  position: absolute;
+  z-index: 2;
+}
+
+/* slot images */
+.slotImage{
+  top: 127px;
+  position: absolute;
+  height: 76px;
+  z-index: -1;
+}
+
+@keyframes spin {
+  0% {
+    top: 127px;
+    opacity: 0;
+}
+50% {
+  opacity: 1;
+}
+100% {
+  top: 347px;
+  opacity: 0;
+}
+}
+
+.spinning0{
+  animation-duration: 600ms;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-delay: 0ms;
+  -webkit-animation-delay: 0ms;
+  animation-timing-function: linear;
+}
+.spinning1{
+  animation-duration: 600ms;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  animation-timing-function: linear;
+}
+.spinning2{
+  animation-duration: 600ms;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+  animation-timing-function: linear;
+}
+
+.col0{
+  left: 107px;
+}
+
+.col1{
+  left: 218px;
+}
+
+.col2{
+  left: 332px;
+}
+
+.start0{
+  top: 127px;
+}
+
+.start1{
+  top: 227px;
+}
+
+.start2{
+  top: 347px;
+}
+
+/* Option Buttons */
+button.options{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 424px;
+  text-align: center;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+#reset{
+  right: 362px;
+  background-color: yellow;
+}
+
+#payTable{
+  right: 294px;
+  background-color: green;
+}
+
+#credit{
+  right: 197px;
+  background-color: red;
+}
+
+#spin{
+  right: 122px;
+  background-color: grey;
+}
+
+/* scores */
+input.credits{
+  position: absolute;
+  top: 351px;
+  height: 23px;
+  background-color: #000;
+  font-family: digital-7;
+  color: red;
+  font-size: 13px;
+  text-align: right;
+}
+
+#totalCredits{
+  right: 324px;
+  width: 105px;
+}
+
+#bet{
+  right: 260px;
+  width: 48px;
+}
+
+@keyframes win {
+  0% {
+    top: 0px;
+  opacity: 1;
+}
+30% {
+  top: 147px;
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+}
+
+.win{
+  position: absolute;
+  z-index: 3;
+  top: 147px;
+  right: 297px;
+  animation-duration: 2000ms;
+  animation-name: win;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-delay: 0ms;
+  -webkit-animation-delay: 0ms;
+  animation-timing-function: ease-out;
+}
+
+/* results */
+.panel{
+  width: 45%;
+  opacity: 0;
+}
+
+.panel img{
+  width: 80%;
+  height: auto;
+}
+
+/* paytable */
+.payoutImg{
+  width: 50px;
+  height: 50px;
+}
+
+
